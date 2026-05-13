@@ -7,10 +7,10 @@ function utilisateur() {
   let age = number(prompt("Entrez votre age :"))
 
 if(age > 20) {
-  console.log("Autoriser" + nom)
+  alert("Autoriser" + nom)
 }else if(age === 20){
-  console.log("Vous avez de la chance" + nom)
+  alert("Vous avez de la chance" + nom)
 }else{
-  console.log("Désolé, vous n'etes pas autoriser" + nom)
+  alert("Désolé, vous n'etes pas autoriser" + nom)
 }
 utilisateur()
