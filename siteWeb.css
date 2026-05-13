@@ -1,0 +1,425 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+    scroll-behavior: smooth; /* Pour le bien de scroller */
+}
+p {
+    font-weight: 500;
+    color: #676363;
+    font-size: 2.05;
+}
+header {
+    background-color: white;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    padding: 20px 10px;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: 0.5s;
+}
+/* Pour faire belle le logo*/
+.logo {
+    color: #1f2020;
+    font-weight: bold; /*Pour le mettre en gras*/
+    font-size: 2em;/*Pour le faire grandir*/
+    text-decoration: none;
+}
+.logo span {
+    color: orangered;
+    position: color 0.10s;
+}
+span:hover {
+    color: rgb(76, 74, 74);
+    border-bottom: 5px solid rgb(93, 92, 92); /* Pour faire belle avec le couleur en desous*/
+}
+
+/*Pour fair belle le navbar de navigation*/
+.navbar {
+    display: flex; /* Pour le aligner dans la meme ligne*/
+    position: relative;
+}
+.navbar li {
+    list-style: none;/* Pour supprimer tout les (.)*/
+    text-transform: uppercase;
+}
+.navbar a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 30px;
+}
+/*Pour le bouton on peut le faire belle */
+.btn-spf {
+    padding: 10px 20px;
+    background: orangered;
+    margin-top: -10px;
+    text-transform: uppercase;
+    border-radius: 20px;
+    transition: all 0.5s ease-out;
+}
+.btn-spf:hover {
+    transform: scale(1.08);
+    filter: brightness(1.5);
+    background: rgb(254, 158, 120);
+}
+
+header .navbar li a:hover {
+    color: orangered;
+    border-bottom: 2px solid orangered;/* Pour faire belle avec le couleur en desous*/
+}
+
+/*Section pricipal*/
+.content {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(image/21112.png);
+    background-size: cover;
+}
+.content .hero {
+    max-width: 70%;
+    text-align: center;
+}
+.content .hero h2 {
+    color: #ffffff;
+    font-size: 2em;
+    text-transform: capitalize;
+}
+.content p:nth-child(2) {
+    color: #e0d9d9;
+    font-size: 1.2em;
+}
+b {
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    font-size: 1em;
+    transition: 0.7s;
+}
+b:hover {
+    color: orangered;
+    border-bottom: 2px solid orangered;
+    box-shadow: 10px 30px 50px;
+}
+/*Pour le bouton du menu*/
+.btn1 {
+    font-size: 1em;
+    color: #e2d8d8;
+    text-decoration: none;
+    background: orangered;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 20px; /*Pour le faire space */
+    text-transform: uppercase;/*Pour le faire majuscule*/
+    letter-spacing: 2px;
+    transition: 0.5s;
+    margin-left: 10px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+.btn2 {
+    font-size: 1em;
+    color: #e2d8d8;
+    text-decoration: none;
+    background: rebeccapurple;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 20px; /*Pour le faire space */
+    text-transform: uppercase;/*Pour le faire majuscule*/
+    letter-spacing: 1px;
+    border-radius: 15px 10px;
+    transition: color all 0.5s ease-out;
+    margin-left: 10px;
+    font-weight: 900;
+}
+.btn1:hover {
+    letter-spacing: 10px;
+    background:  black;
+}
+.btn2:hover {
+    background: rgb(247, 0, 234);
+    letter-spacing: 2px;
+}
+/*Section A propos de moi */
+section {
+    padding: 100px;
+}
+.row {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.row .col50 {
+    position: relative;
+    width: 48%;
+    justify-content: center;
+    align-items: center;
+}
+.row .col50 h2 {
+    margin-bottom: 20px;
+}
+.titre {
+    color: #1f2020;
+    font-size: 3em;
+    font-weight: 800;
+    text-transform: capitalize;
+}
+.titre b {
+    color: orangered;
+    font-size: 1.05em;
+    font-weight: 500px;
+}
+.row .col50 img {
+    height: 600px;
+    width: 500px;
+    position: relative;
+    border-radius: 500px;
+    transition: all 0.5s ease-out;
+}
+.photo {
+    transition: all 0.5s ease-out;
+}
+.photo:hover {
+    transform: scale(1.07);
+    filter: brightness(1.9);
+}
+/*Section Projets*/
+.titre {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.projet {
+    margin-top: -100px;
+}
+.projet .contenu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+.projet .contenu .box {
+    width: 350px;
+    margin-top: 20px;
+    border: 20px solid #fff;
+    box-shadow: 20px 15px 35px rgba(0, 0, 0, 0.8);
+}
+.projet .contenu .box .imbox {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+.projet .contenu .box .imbox img {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.projet .contenu .box .text {
+    text-align: center;
+    font-weight: 500;
+    color: rgb(89, 21, 35);
+}
+.projet .contenu .box .text h3 {
+    font-weight: 400px;
+}
+/*Section Services*/
+.service {
+    margin-top: -100px;
+}
+.service .contenu {
+    display: flex; /*Pour les ranger en alignement*/
+    /* flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 40px;*/
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    transition: all 0.5s ease-out;
+}
+.service .contenu .box {
+    /*width: 250px;
+    margin: 15px;*/
+    width: 350px;
+    margin-top: 20px;
+    border: 20px solid #fff;
+    box-shadow: 20px 15px 35px rgba(0, 0, 0, 0.9);
+}
+.service .contenu .box .imbox {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+.service .contenu .box img {
+    position: relative;
+    width: 100%; /*Agrendir le hoteur ----*/
+    height: 300px;/*Agrendir le longeur |*/
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+.service .contenu .box h3 {
+    color: black;
+    font-weight: 900;
+    text-align: center;
+}
+/*Section Temoignage */
+.temoignage {
+    background-image: url(image/livre\ 2.jpg);
+    background-size: cover;
+}
+.temoignage .contenu {
+    display: flex;
+    margin-top: 40px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.temoignage .contenu .box {
+    width: 340px;
+    margin: 20px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /*Voila comment bouger un objet ou image*/
+    border-radius: 15px;
+}
+.temoignage .contenu .box .imbox {
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    position: relative;
+    margin-bottom: 20px;
+    overflow: hidden;/*Pour changer le genre de objet*/
+}
+.temoignage .contenu .box .imbox img { /*Voila comment changer l'image de facon pro*/
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    justify-content: center;
+    align-items: center;
+}
+.temoignage .contenu .box text {
+    text-align: center;
+    color: #676363;
+    font-style: italic;
+}
+.temoignage .contenu .box .text h3 {
+    color: orangered;
+    margin-top: 20px;
+    font-size: 1em;
+    font-weight: 600;
+}
+.blanc .titre-text {
+    color: orangered;
+}
+.blanc .titre-text,
+.blanc p {
+    color: rgb(255, 255, 255);
+}
+/*Section Contact*/
+.contact {
+    background-image: url(image/web5.jpg);
+    background-size: cover;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.9);
+    width: 100%;
+    background-position: unset;
+}
+.contactfrom {
+    padding: 75px 50px;
+    background: #d6d4d4;
+    box-shadow: 10px 15px 50px orangered; /*Pour le faire briller*/
+    max-width: 500px;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 38%;
+}
+.contactfrom .boite {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.contactfrom h3 {
+    color: #282727;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+.contactfrom .boite input,
+.contactfrom boite textarea {
+    width: 100%;
+    border: 100px solid rgb(32, 239, 0)717;
+    padding: 10px;
+    color: #1f2020;
+    outline: none;
+    font-size: 16px;
+    font-weight: 500;
+    resize: none;
+}
+.contactfrom .boite input[type="submit"] {
+    font-size: 1em;
+    font-weight: 700;
+    color: #ffffff;
+    background: orangered;
+    display: inline-block;
+    cursor: pointer;
+    text-transform: uppercase; /*Pour le faire tout MAJUSCULE*/
+    text-decoration: none;
+    letter-spacing: 2px;
+    outline: none;
+    border: none;
+    transition: 0.5s;
+    max-width: 120px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 10px 15px 50px rgb(238, 82, 100);
+    transition: all 0.7s ease-out;
+}
+.contactfrom .boite input[type="submit"]:hover {
+    transform: scale(1.09);/*Animations avec pour changer le couleurs*/
+    filter: brightness(1.9);
+    background: #585858;
+    color: #2f2f2f;
+}
+.copy {
+    padding: 20px 40px;
+    border-top: 2px solid rgba(0, 0, 0, 0.5);
+    background: rgba(228, 222, 222,);
+}
+.copy p:nth-child(1) {
+    color: #333;
+    text-align: center;
+    font-size: 1em;
+}
+.copy a {
+    color: orangered;
+    text-decoration: none;
+    font-weight: 600;
+    font-style: italic;
+}
+header .sticky {
+    background: #1f2020;
+    padding: 10px 10px;
+    box-shadow: 0px 5px 20px;
+}

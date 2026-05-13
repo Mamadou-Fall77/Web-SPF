@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoElite — Voitures de Luxe</title>
+    <link rel="stylesheet" href="voiture.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- ====================================================
+CURSEUR PERSONNALISÉ
+Div qui sera déplacée par JavaScript pour suivre la souris.
+==================================================== -->
+    <div id="curseur"></div>
+
+<!-- ====================================================
+    NAVIGATION
+==================================================== -->
+    <nav id="navbar">
+    <!-- Logo cliquable qui renvoie en haut de la page -->
+    <a href="#accueil" class="logo">Auto<span>Elite</span></a>
+
+    <!-- Liste de navigation -->
+        <ul class="nav-liens" id="navLiens">
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#voitures">Véhicules</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#temoignages">Avis</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    <!-- Bouton hamburger (menu mobile) -->
+    <div class="menu-btn" id="menuBtn" onclick="basculerMenu()">
+<!--
+onclick="basculerMenu()" : Appelle la fonction JS "basculerMenu"
+quand l'utilisateur clique sur le bouton.
+-->
+            <span></span>
+            <span></span>
+            <span></span>
+    </div>
+    </nav>
+<!-- ====================================================
+        SECTION HÉROS (PAGE D'ACCUEIL)
+==================================================== -->
+    <section id="accueil">
+        <div class="hero-bg"></div>
+        <div class="lignes-deco"></div>
+        <div class="hero-contenu">
+            <p class="hero-sous-titre">Depuis 1998 — Excellence Automobile</p>
+            <h1 class="hero-titre">
+            L'Art de<br>
+            <span class="or">Conduire</span><br>
+            l'Exception
+            </h1>
+        <p class="hero-desc">
+        Découvrez notre collection exclusive de véhicules de luxe soigneusement
+        sélectionnés pour les amateurs de perfection mécanique et d'élégance.
+        </p>
+    <div class="hero-boutons">
+        <a href="#voitures" class="btn btn-principal">Voir le Catalogue</a>
+        <a href="#contact" class="btn btn-secondaire">Prendre RDV</a>
+    </div>
+    </div>
+
+    <!-- Indicateur de défilement vers le bas -->
+    <div class="scroll-indicateur">
+        <span>Défiler</span>
+        <div class="scroll-ligne"></div>
+    </div>
+    </section>
+
+<!-- ====================================================
+        SECTION STATISTIQUES
+==================================================== -->
+    <div id="stats">
+    <!--
+        data-cible="250" : Attribut personnalisé HTML5 (data-*).
+        JavaScript le lira pour animer le compteur jusqu'à 250.
+    -->
+    <div class="stat-item">
+        <div class="stat-nombre" data-cible="250">0</div>
+        <div class="stat-label">Véhicules Vendus</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-nombre" data-cible="98">0</div>
+        <div class="stat-label">% Satisfaction</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-nombre" data-cible="26">0</div>
+        <div class="stat-label">Années d'Expérience</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-nombre" data-cible="15">0</div>
+        <div class="stat-label">Marques Partenaires</div>
+    </div>
+  </div>
+
+  <!-- ====================================================
+       SECTION CATALOGUE DES VOITURES
+  ==================================================== -->
+  <section id="voitures">
+    <div class="titre-section">
+      <div class="etiquette">Notre Sélection</div>
+      <h2>Le Catalogue <span style="color:var(--or)">Exclusif</span></h2>
+      <p>Des véhicules d'exception pour une conduite hors du commun</p>
+      <div class="separateur"></div>
+    </div>
+
+    <!-- Boutons de filtre -->
+    <div class="filtres">
+      <button class="filtre-btn actif" onclick="filtrer('tous')">Tous</button>
+      <button class="filtre-btn" onclick="filtrer('berline')">Berlines</button>
+      <button class="filtre-btn" onclick="filtrer('suv')">SUV</button>
+      <button class="filtre-btn" onclick="filtrer('sport')">Sport</button>
+      <button class="filtre-btn" onclick="filtrer('electrique')">Électrique</button>
+    </div>
+
+    <!-- Grille des cartes voitures -->
+    <div class="grille-voitures" id="grilleVoitures">
+
+      <!-- Carte 1 -->
+      <div class="carte-voiture" data-categorie="berline">
+        <!--
+          data-categorie : Permet au JavaScript de filtrer les voitures
+          selon leur catégorie (berline, suv, sport, electrique).
+        -->
+        <div class="carte-image">
+          <div class="voiture-svg">🚗</div>
+          <span class="badge badge-vedette">Vedette</span>
+        </div>
+        <div class="carte-infos">
+          <div class="carte-marque">Mercedes-Benz</div>
+          <div class="carte-modele">Classe S 580</div>
+          <div class="carte-specs">
+            <div class="spec">
+              <span class="spec-valeur">503</span>
+              <span class="spec-label">CV</span>
+            </div>
+            <div class="spec">
+              <span class="spec-valeur">4.1s</span>
+              <span class="spec-label">0-100</span>
+            </div>
+            <div class="spec">
+              <span class="spec-valeur">250</span>
+              <span class="spec-label">km/h max</span>
+            </div>
+          </div>
+          <div class="carte-pied">
+            <div class="carte-prix">149 000 € <span>/ à partir de</span></div>
+            <button class="btn-voir" onclick="afficherDetail('Mercedes Classe S 580')">Détails</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte 2 -->
+      <div class="carte-voiture" data-categorie="sport">
+        <div class="carte-image">
+          <div class="voiture-svg">🏎️</div>
+          <span class="badge badge-nouveau">Nouveau</span>
+        </div>
+        <div class="carte-infos">
+          <div class="carte-marque">Porsche</div>
+          <div class="carte-modele">911 Turbo S</div>
+          <div class="carte-specs">
+            <div class="spec">
+              <span class="spec-valeur">650</span>
+              <span class="spec-label">CV</span>
+            </div>
+            <div class="spec">
+              <span class="spec-valeur">2.7s</span>
+              <span class="spec-label">0-100</span>
+            </div>
+            <div class="spec">
+              <span class="spec-valeur">330</span>
+              <span class="spec-label">km/h max</span>
+            </div>
+          </div>
+          <div class="carte-pied">
+            <div class="carte-prix">245 000 €</div>
+            <button class="btn-voir" onclick="afficherDetail('Porsche 911 Turbo S')">Détails</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte 3 -->
+      <div class="carte-voiture" data-categorie="suv">
+        <div class="carte-image">
+          <div class="voiture-svg">🚙</div>
+          <span class="badge badge-nouveau">Nouveau</span>
+        </div>
+        <div class="carte-infos">
+          <div class="carte-marque">Bentley</div>
+          <div class="carte-modele">Bentayga Speed</div>
+          <div class="carte-specs">
+            <div class="spec">
+              <span class="spec-valeur">635</span>
+              <span class="spec-label">CV</span>
+            </div>
+            <div class="spec">
+              <span class="spec-valeur">3.9s</span>
+              <span class="spec-label">0-100</span>
+            </div>
+            <div class="spec">
+              <span class="spec-valeur">306</span>
+              <span class="spec-label">km/h max</span>
+            </div>
+          </div>
+          <div class="carte-pied">
+            <div class="carte-prix">280 000 €</div>
+            <button class="btn-voir" onclick="afficherDetail('Bentley Bentayga Speed')">Détails</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte 4 -->
+      <div class="carte-voiture" data-categorie="electrique">
+        <div class="carte-image">
+          <div class="voiture-svg">⚡</div>
+          <span class="badge badge-nouveau">Nouveau</span>
+        </div>
+        <div class="carte-infos">
+          <div class="carte-marque">Tesla</div>
+          <div class="carte-modele">Model S Plaid</div>
+          <div class="carte-specs">
+            <div class="spec">
+              <span class="spec-valeur">1020</span>
+              <span class="spec-label">CV</span>
+            </div>
+            <div class="spec">
+              <span class="spec-valeur">2.1s</span>
+              <span class="spec-label">0-100</span>
+            </div>
+            <div class="spec">
+              <span class="spec-valeur">322</span>
+              <span class="spec-label">km/h max</span>
+            </div>
+          </div>
+          <div class="carte-pied">
+            <div class="carte-prix">135 000 €</div>
+            <button class="btn-voir" onclick="afficherDetail('Tesla Model S Plaid')">Détails</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte 5 -->
+      <div class="carte-voiture" data-categorie="sport">
+        <div class="carte-image">
+          <div class="voiture-svg">🏁</div>
+          <span class="badge badge-solde">-10%</span>
+        </div>
+        <div class="carte-infos">
+          <div class="carte-marque">Ferrari</div>
+          <div class="carte-modele">Roma Spider</div>
+          <div class="carte-specs">
+            <div class="spec">
+              <span class="spec-valeur">620</span>
+              <span class="spec-label">CV</span>
+            </div>
+            <div class="spec">
+              <span class="spec-valeur">3.4s</span>
+              <span class="spec-label">0-100</span>
+            </div>
+            <div class="spec">
+              <span class="spec-valeur">320</span>
+              <span class="spec-label">km/h max</span>
+            </div>
+          </div>
+          <div class="carte-pied">
+            <div class="carte-prix">229 000 €</div>
+            <button class="btn-voir" onclick="afficherDetail('Ferrari Roma Spider')">Détails</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte 6 -->
+      <div class="carte-voiture" data-categorie="berline">
+        <div class="carte-image">
+          <div class="voiture-svg">👑</div>
+        </div>
+        <div class="carte-infos">
+          <div class="carte-marque">Rolls-Royce</div>
+          <div class="carte-modele">Ghost Black Badge</div>
+          <div class="carte-specs">
+            <div class="spec">
+              <span class="spec-valeur">600</span>
+              <span class="spec-label">CV</span>
+            </div>
+            <div class="spec">
+              <span class="spec-valeur">4.8s</span>
+              <span class="spec-label">0-100</span>
+            </div>
+            <div class="spec">
+              <span class="spec-valeur">250</span>
+              <span class="spec-label">km/h max</span>
+            </div>
+          </div>
+          <div class="carte-pied">
+            <div class="carte-prix">470 000 €</div>
+            <button class="btn-voir" onclick="afficherDetail('Rolls-Royce Ghost Black Badge')">Détails</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====================================================
+       SECTION SERVICES
+  ==================================================== -->
+  <section id="services">
+    <div class="titre-section">
+      <div class="etiquette">Ce que nous offrons</div>
+      <h2>Nos <span style="color:var(--or)">Services</span></h2>
+      <p>Un accompagnement complet pour votre expérience automobile</p>
+      <div class="separateur"></div>
+    </div>
+
+    <div class="grille-services">
+      <div class="carte-service">
+        <span class="icone-service">🔍</span>
+        <h3>Recherche Personnalisée</h3>
+        <p>Nos experts trouvent le véhicule parfait selon vos critères exacts, partout dans le monde, en toute discrétion.</p>
+      </div>
+      <div class="carte-service">
+        <span class="icone-service">🔧</span>
+        <h3>Entretien & Réparation</h3>
+        <p>Un atelier équipé des dernières technologies pour l'entretien de votre véhicule de luxe avec des pièces d'origine.</p>
+      </div>
+      <div class="carte-service">
+        <span class="icone-service">💳</span>
+        <h3>Financement Sur Mesure</h3>
+        <p>Des solutions de financement flexibles adaptées à votre situation pour que l'excellence soit accessible.</p>
+      </div>
+      <div class="carte-service">
+        <span class="icone-service">🛡️</span>
+        <h3>Garantie Étendue</h3>
+        <p>Protection complète jusqu'à 5 ans sur tous nos véhicules certifiés, pour rouler en toute sérénité.</p>
+      </div>
+      <div class="carte-service">
+        <span class="icone-service">🚗</span>
+        <h3>Essai à Domicile</h3>
+        <p>Prenez le temps de vivre l'expérience de votre futur véhicule directement depuis votre domicile.</p>
+      </div>
+      <div class="carte-service">
+        <span class="icone-service">✈️</span>
+        <h3>Livraison Internationale</h3>
+        <p>Livraison sécurisée de votre véhicule partout en Europe et dans le monde, assuré porte-à-porte.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       SECTION TÉMOIGNAGES (SLIDER)
+  ==================================================== -->
+  <section id="temoignages">
+    <div class="titre-section">
+      <div class="etiquette">Ils nous font confiance</div>
+      <h2>Leurs <span style="color:var(--or)">Témoignages</span></h2>
+      <div class="separateur"></div>
+    </div>
+
+    <div class="slider-wrapper">
+      <div class="slider" id="slider">
+
+        <div class="temoignage">
+          <span class="guillemets">"</span>
+          <div class="etoiles">★★★★★</div>
+          <p class="temoignage-texte">
+            Un service irréprochable du début à la fin. L'équipe d'AutoElite a su trouver exactement 
+            la Porsche 911 que je cherchais depuis des mois. Je les recommande les yeux fermés.
+          </p>
+          <div class="temoignage-auteur">
+            <strong>Jean-Pierre Moreau</strong>
+            <span>Entrepreneur — Lyon</span>
+          </div>
+        </div>
+
+        <div class="temoignage">
+          <span class="guillemets">"</span>
+          <div class="etoiles">★★★★★</div>
+          <p class="temoignage-texte">
+            La livraison à domicile de ma Mercedes Classe S m'a positivement surpris. 
+            Le véhicule était préparé impeccablement. Une expérience vraiment premium.
+          </p>
+          <div class="temoignage-auteur">
+            <strong>Sophie Durand</strong>
+            <span>Directrice Artistique — Paris</span>
+          </div>
+        </div>
+
+        <div class="temoignage">
+          <span class="guillemets">"</span>
+          <div class="etoiles">★★★★★</div>
+          <p class="temoignage-texte">
+            Le financement proposé était bien au-delà de mes espérances. 
+            Aujourd'hui je roule en Bentley grâce à AutoElite. Un rêve devenu réalité.
+          </p>
+          <div class="temoignage-auteur">
+            <strong>Karim Benali</strong>
+            <span>Médecin — Bordeaux</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="slider-controles">
+      <button class="slider-btn" onclick="changerSlide(-1)">&#8592;</button>
+      <div class="slider-points" id="sliderPoints"></div>
+      <button class="slider-btn" onclick="changerSlide(1)">&#8594;</button>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       SECTION CONTACT
+  ==================================================== -->
+  <section id="contact">
+    <div class="titre-section">
+      <div class="etiquette">Parlons-en</div>
+      <h2>Nous <span style="color:var(--or)">Contacter</span></h2>
+      <p>Notre équipe est disponible pour répondre à toutes vos questions</p>
+      <div class="separateur"></div>
+    </div>
+
+    <div class="contact-grille">
+      <!-- Informations de contact -->
+      <div class="contact-info">
+        <h3>Venez nous rendre visite</h3>
+        <p>Notre showroom vous accueille du lundi au samedi de 9h à 19h. 
+           Prenez rendez-vous pour un accueil personnalisé et un essai exclusif.</p>
+
+        <div class="contact-item">
+          <div class="contact-icone">📍</div>
+          <div class="contact-item-texte">
+            <strong>Adresse</strong>
+            <span>47 Avenue de la Grande Armée, 75116 Paris</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icone">📞</div>
+          <div class="contact-item-texte">
+            <strong>Téléphone</strong>
+            <span>+33 1 47 20 35 00</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icone">✉️</div>
+          <div class="contact-item-texte">
+            <strong>Email</strong>
+            <span>contact@autoelite.fr</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icone">🕐</div>
+          <div class="contact-item-texte">
+            <strong>Horaires</strong>
+            <span>Lun–Sam : 9h–19h / Dim : Sur RDV</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulaire de contact -->
+      <form class="formulaire" onsubmit="envoyerFormulaire(event)">
+        <!--
+          onsubmit="envoyerFormulaire(event)" : Appelle la fonction JS
+          lors de la soumission du formulaire. "event" est l'événement de soumission.
+          On le passe à la fonction pour pouvoir empêcher le rechargement de page.
+        -->
+
+        <div class="champ-paire">
+          <div class="champ-groupe">
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" placeholder="Jean" required>
+            <!-- required : Champ obligatoire — le formulaire ne peut pas être envoyé vide -->
+          </div>
+          <div class="champ-groupe">
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" placeholder="Dupont" required>
+          </div>
+        </div>
+
+        <div class="champ-groupe">
+          <label for="email">Adresse Email</label>
+          <input type="email" id="email" placeholder="jean.dupont@email.com" required>
+          <!-- type="email" : Valide automatiquement le format email -->
+        </div>
+
+        <div class="champ-groupe">
+          <label for="telephone">Téléphone</label>
+          <input type="tel" id="telephone" placeholder="+33 6 12 34 56 78">
+          <!-- type="tel" : Optimisé pour les numéros de téléphone -->
+        </div>
+
+        <div class="champ-groupe">
+          <label for="interet">Véhicule d'intérêt</label>
+          <select id="interet">
+            <!--
+              <select> : Liste déroulante avec plusieurs options.
+              <option> : Chaque choix de la liste.
+            -->
+            <option value="">— Sélectionner un modèle —</option>
+            <option value="mercedes">Mercedes-Benz Classe S</option>
+            <option value="porsche">Porsche 911 Turbo S</option>
+            <option value="bentley">Bentley Bentayga Speed</option>
+            <option value="tesla">Tesla Model S Plaid</option>
+            <option value="ferrari">Ferrari Roma Spider</option>
+            <option value="rolls">Rolls-Royce Ghost</option>
+            <option value="autre">Autre modèle</option>
+          </select>
+        </div>
+
+        <div class="champ-groupe">
+          <label for="message">Votre Message</label>
+          <textarea id="message" placeholder="Décrivez votre projet automobile, vos critères, vos questions..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-principal" style="align-self: flex-start; border:none; cursor:pointer;">
+          Envoyer le Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       PIED DE PAGE (FOOTER)
+  ==================================================== -->
+  <footer>
+    <div class="footer-grille">
+    <div class="footer-brand">
+        <span class="logo">Auto<span>Elite</span></span>
+        <p>Spécialiste des véhicules de luxe et de prestige depuis 1998. 
+        L'excellence au service de votre passion automobile.</p>
+    </div>
+
+      <div class="footer-col">
+        <h4>Catalogue</h4>
+        <ul>
+          <li><a href="#voitures">Berlines</a></li>
+          <li><a href="#voitures">SUV Premium</a></li>
+          <li><a href="#voitures">Sportives</a></li>
+          <li><a href="#voitures">Électriques</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Financement</a></li>
+          <li><a href="#services">Entretien</a></li>
+          <li><a href="#services">Garantie</a></li>
+          <li><a href="#services">Livraison</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Entreprise</h4>
+        <ul>
+          <li><a href="#accueil">À propos</a></li>
+          <li><a href="#temoignages">Témoignages</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact">Recrutement</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bas">
+      <p>© 2024 AutoElite — Tous droits réservés</p>
+      <div class="reseaux">
+        <a href="#" class="reseau-btn">f</a>
+        <a href="#" class="reseau-btn">in</a>
+        <a href="#" class="reseau-btn">ig</a>
+        <a href="#" class="reseau-btn">yt</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====================================================
+       BOUTON RETOUR EN HAUT
+  ==================================================== -->
+  <button id="btn-haut" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</button>
+  <!--
+    onclick="window.scrollTo({top:0, behavior:'smooth'})" :
+    Fait défiler la page vers le haut (position 0) avec animation douce.
+  -->
+
+  <!-- ====================================================
+       NOTIFICATION (TOAST MESSAGE)
+  ==================================================== -->
+  <div id="notification"></div>
+
+  <!-- ====================================================
+       JAVASCRIPT
+       Le JS (JavaScript) rend la page interactive et dynamique.
+       On le place à la fin du body pour s'assurer que tout le HTML
+       est chargé avant que le JS s'exécute.
+  ==================================================== -->
+    <script src="voiture.js"></script>
+</body>
+</html>
